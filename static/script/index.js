@@ -4,7 +4,7 @@ import { apps } from './apps.js';
 import { access } from './home.js';
 import { options } from './options.js';
 import { support } from './support.js';
-import { community } from './community.js';
+import { discord } from './discord.js';
 
 window.app = new App();
 
@@ -213,7 +213,7 @@ app.on('#gs', gs);
 app.on('#apps', apps);
 app.on('#settings', options);
 app.on('#support', support);
-app.on('#community', community);
+app.on('#discord', discord);
 
 app.init();
 

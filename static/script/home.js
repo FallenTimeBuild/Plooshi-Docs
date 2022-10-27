@@ -20,9 +20,8 @@ function access(app) {
     document.querySelector('#open-nav').setAttribute('data-open', '');
     app.search.input.focus();
 
-
-    
-    app.nav.community = app.createLink('#community', 'Community');
+ 
+    app.nav.community = app.createLink('#discord', 'Discord');
     app.nav.support = app.createLink('#support', 'Support');
     app.nav.apps = app.createLink('#apps', 'Apps');
     app.nav.games = app.createLink('#gs', 'Games');
