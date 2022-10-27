@@ -15,6 +15,10 @@
         {
             "name": "<a href=\"https://github.com/amethystnetwork-dev/\">Amethyst Network</a>",
             "data": "Created deployable version"
+        },
+        {
+            "name": "<a href=\"https://github.com/guacaplushy/\">Guacaplushy</a>",
+            "data": "Hosting"
         }
     ],
     "socials": [
@@ -25,7 +29,7 @@
     ],
     "contact": [
         {
-            "name": "<a href=\"mailto:example@example.com\">No email provided</a>"
+            "name": "<a href=\"mailto:sunset@plooshiesaresocute.wtf\">Guacaplushy</a>"
         }
     ]
 }
