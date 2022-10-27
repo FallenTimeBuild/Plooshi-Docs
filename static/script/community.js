@@ -6,12 +6,12 @@ function community(app) {
         'div', 
         [
             app.createElement('section', [
-                app.createElement('p', 'You are being taken to the Amethyst Network server (discord.gg/J3VPy5Vy8x).', {
+                app.createElement('p', 'You are being taken to the Plooshi Incognito server (<a href="/load.html#aHR0cHM6Ly9kaXNjb3JkLmdnLzRQMkFnQlBZeHc%3D">https://discord.gg/4P2AgBPYxw</a>).', {
                         style: {
                             'margin-bottom': '0'
                         }
                     }),
-                    app.createElement('p', 'Are you sure you want to <a href="https://discord.gg/J3VPy5Vy8x">proceed</a>?', {
+                    app.createElement('p', 'Are you sure you want to <a href="/load.html#aHR0cHM6Ly9kaXNjb3JkLmdnLzRQMkFnQlBZeHc%3D">proceed</a>?', {
                         style: {
                             'margin-bottom': '0'
                         }
