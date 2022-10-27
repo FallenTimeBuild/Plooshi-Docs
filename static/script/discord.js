@@ -1,4 +1,4 @@
-function community(app) {
+function discord(app) {
     app.search.title.style.display = 'block';
     app.search.title.textContent = 'Community';
     app.search.input.style.display = 'none';
@@ -6,7 +6,7 @@ function community(app) {
         'div', 
         [
             app.createElement('section', [
-                app.createElement('p', 'You are being taken to the Plooshi Incognito server (<a href="/load.html#aHR0cHM6Ly9kaXNjb3JkLmdnLzRQMkFnQlBZeHc%3D">https://discord.gg/4P2AgBPYxw</a>).', {
+                app.createElement('p', 'You are being taken to the Plooshi Incognito discord server (<a href="/load.html#aHR0cHM6Ly9kaXNjb3JkLmdnLzRQMkFnQlBZeHc%3D">https://discord.gg/4P2AgBPYxw</a>).', {
                         style: {
                             'margin-bottom': '0'
                         }
@@ -30,4 +30,4 @@ function community(app) {
     )
 };
 
-export { community };
+export { discord };
