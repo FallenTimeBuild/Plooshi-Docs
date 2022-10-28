@@ -1,6 +1,6 @@
 function discord(app) {
     app.search.title.style.display = 'block';
-    app.search.title.textContent = 'Community';
+    app.search.title.textContent = 'Discord Server';
     app.search.input.style.display = 'none';
     app.main.support = app.createElement(
         'div', 

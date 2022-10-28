@@ -1,5 +1,5 @@
 const tips = [
-    ''
+    'Join our <a href="/load.html#aHR0cHM6Ly9kaXNjb3JkLmdnLzRQMkFnQlBZeHc%3D">Discord</a>!'
 ];
 
 
