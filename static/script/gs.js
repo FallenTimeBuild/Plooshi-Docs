@@ -40,12 +40,12 @@ async function gs(app) {
         class: 'gs-player',
         style: {
             display: 'none',
-        } 
+        }
     });
 
     app.search.input.setAttribute(
         'oninput',
-        '(' + (function() {
+        '(' + (function () {
             let count = 0;
 
             app.main.library.querySelectorAll('.gs-entry').forEach(node => {
@@ -55,7 +55,7 @@ async function gs(app) {
                 } else {
                     node.removeAttribute('data-active');
                 };
-            }); 
+            });
 
             app.main.library.querySelectorAll('.category').forEach(node => {
                 if (!node.querySelectorAll('.gs-library .gs-entry[data-active]').length) {
@@ -122,7 +122,7 @@ async function compileGs(app) {
                     window.addEventListener('click', foc);
 
                     app.nav.fullscreen = app.createElement('button', 'fullscreen', {
-                        class: 'submit', 
+                        class: 'submit',
                         style: {
                             'font-family': 'Material Icons',
                             'font-size': '30px',
@@ -146,13 +146,13 @@ async function compileGs(app) {
                     window.scrollTo({ top: 0 });
 
                     app.search.back.setAttribute(
-                        'onclick', 
+                        'onclick',
                         '(' + (() => {
 
                             if (window.location.hash !== '#gs') return this.removeAttribute('onclick');
 
                             event.preventDefault();
-                            
+
                             app.main.library.style.removeProperty('display');
                             app.search.input.style.removeProperty('display');
                             app.search.title.style.display = 'none';
@@ -165,11 +165,12 @@ async function compileGs(app) {
 
                         }).toString() + ')()'
                     );
-                   /*
-                   nav(entry.location, entry.title, entry.img);
-                   */
+                    /*
+                    nav(entry.location, entry.title, entry.img);
+                    */
                 }
-            }        });
+            }
+        });
 
         if (entry.featured) {
             list.featured.push(elem);
@@ -196,7 +197,7 @@ async function compileGs(app) {
             attrs: {
                 'data-category': 'featured'
             }
-        }), 
+        }),
         app.createElement('section', [
             app.createElement('span', 'Multiplayer', {
                 style: {
@@ -260,7 +261,7 @@ async function compileGs(app) {
                     'font-weight': '500'
                 }
             }),
-            app.createElement('div', [ ...list.gba, ...list.snes, ...list.nes, ...list.n64 ], {
+            app.createElement('div', [...list.gba, ...list.snes, ...list.nes, ...list.n64], {
                 class: 'gs-library'
             })
         ], {

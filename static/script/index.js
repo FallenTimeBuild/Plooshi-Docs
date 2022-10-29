@@ -9,25 +9,25 @@ import { discord } from './discord.js';
 window.app = new App();
 
 
-switch(localStorage.getItem('incog||background')) {
+switch (localStorage.getItem('incog||background')) {
     case 'stars':
         particlesJS.load('.particles', './json/stars.json');
         break;
     case 'particles':
-        particlesJS.load('.particles', './json/particles.json'); 
+        particlesJS.load('.particles', './json/particles.json');
 };
 
-app.openNav = function() {
+app.openNav = function () {
     document.querySelector('#close-nav').style.display = 'flex';
     document.querySelector('nav').style.display = 'flex';
 };
 
-app.closeNav = function() {
+app.closeNav = function () {
     document.querySelector('#close-nav').style.removeProperty('display')
     document.querySelector('nav').style.removeProperty('display')
 };
 
-app.destroyParticles = function() {
+app.destroyParticles = function () {
     if (window.pJSDom && window.pJSDom.length) window.pJSDom[0].pJS.fn.vendors.destroypJS();
     window.pJSDom = [];
     return true;
@@ -44,7 +44,7 @@ icon.href = localStorage.getItem('incog||icon') || 'https://plooshiesaresocute.w
 app.on('init', () => {
     app.icon = document.querySelector('#favicon');
     app.search.back = app.createElement('a', 'chevron_left', {
-        class: 'submit', 
+        class: 'submit',
         style: {
             'font-family': 'Material Icons',
             'font-size': '30px',
@@ -61,11 +61,6 @@ app.on('init', () => {
             display: 'none',
         }
     });
-    //app.search.logo = createLink('#', '<svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365.37 365.37"><defs>    <style>       .cls-1{    fill:none;    stroke-width:18px;}  .cls-1, .cls-2 {    stroke: var(--accent);    stroke-miterlimit:10;} .cls-2 {    fill: var(--accent);    stroke-width:5px;}    </style>  </defs><circle class="cls-1" cx="182.68" cy="182.68" r="173.68"></circle><path class="cls-2" d="M210.41,66.38A115.27,115.27,0,0,1,70.52,248.19,134,134,0,1,0,210.41,66.38Z" transform="translate(-17.32 -17.32)"></path></svg>', {
-    //    style: {
-    //        display: 'none'
-    //    }
-    //});
     app.search.logo = createLink('#', '<img class="nav-logo" src="/index.svg" width=50 height=50></img>', {
         style: {
             display: 'none'
@@ -78,7 +73,7 @@ app.on('init', () => {
         class: 'interactive',
     });
     app.search.submit = app.createElement('button', '<i class="fas fa-search"></i>', {
-        class: 'submit', 
+        class: 'submit',
         style: {
             display: 'none'
         }
@@ -90,7 +85,7 @@ app.on('exit', async () => {
     if (document.querySelector('header').hasAttribute('data-init')) {
         document.querySelector('header').removeAttribute('data-init')
     };
-    
+
     if (app.search.logo.style.display === 'none') {
         app.search.logo.style.removeProperty('display');
     };
@@ -122,7 +117,7 @@ document.querySelector('#access-form').addEventListener('submit', event => {
     event.preventDefault();
     app.main.target.style.display = 'none';
     app.header.target.style.display = 'none';
-    
+
     const frame = document.querySelector('.access-frame');
 
     frame.src = '/load.html#' + btoa(event.target[0].value);
@@ -135,7 +130,7 @@ document.querySelector('.close-access').addEventListener('click', event => {
     event.preventDefault();
     app.main.target.style.display = 'block';
     app.header.target.style.display = 'flex';
-    
+
     const frame = document.querySelector('.access-frame');
 
     frame.src = 'about:blank';
@@ -150,7 +145,7 @@ document.querySelector('.refresh-access').addEventListener('click', () => {
 
     try {
         win.location.reload();
-    } catch(e) {
+    } catch (e) {
 
     };
 });
@@ -158,7 +153,7 @@ document.querySelector('.refresh-access').addEventListener('click', () => {
 document.querySelector('.access-link').addEventListener('click', () => {
     const frame = document.querySelector('.access-frame');
     const win = frame.contentWindow;
-    
+
     if (win.__uv) {
         navigator.clipboard.writeText(
             new URL('./?link=' + encodeURIComponent(btoa(win.__uv.location.href)), location.href).href
@@ -225,7 +220,7 @@ function createLink(href = null, content = '', config = {}) {
 };
 
 function timeout(time = 1000) {
-    return new Promise(resolve => 
+    return new Promise(resolve =>
         setTimeout(resolve, time)
     );
 };

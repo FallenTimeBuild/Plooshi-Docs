@@ -9,7 +9,7 @@ function createComponent(element) {
             return target[prop];
         },
         set: (target, prop, val) => {
-            if (prop === 'text') return (element.textContent = val, true);            
+            if (prop === 'text') return (element.textContent = val, true);
             if (typeof val === 'string') val = document.createElement(val);
 
             if (prop in target) {

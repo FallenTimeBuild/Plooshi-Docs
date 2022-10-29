@@ -3,12 +3,12 @@ async function support(app) {
     app.search.title.textContent = 'Support';
     app.search.input.style.display = 'none';
     app.main.support = app.createElement(
-        'div', 
+        'div',
         await getData(app));
-        app.search.back.style.display = 'inline';
+    app.search.back.style.display = 'inline';
     app.search.back.setAttribute(
         'onclick',
-        '(' + (function(){
+        '(' + (function () {
             window.location.hash = '';
         }).toString() + ')();'
     )
@@ -43,5 +43,5 @@ async function getData(app) {
     };
     return entries;
 };
- 
+
 export { support };

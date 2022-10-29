@@ -27,7 +27,7 @@ class App extends EventEmitter {
     };
     createElement(elemName, content = '', config = {}) {
         const element = document.createElement(elemName);
-    
+
         if ('events' in config) {
             for (const name in config.events) {
                 element.addEventListener(name, config.events[name]);
@@ -39,17 +39,17 @@ class App extends EventEmitter {
                 element.setAttribute(name, config.attrs[name])
             };
         };
-    
+
         if ('style' in config && 'style' in element) {
             for (const name in config.style) {
                 element.style.setProperty(name, config.style[name])
             };
         };
-    
+
         if ('id' in config) {
             element.id = config.id;
         };
-    
+
         if ('class' in config) {
             if (Array.isArray(config.class)) {
                 element.classList.add(...config.class);
@@ -57,7 +57,7 @@ class App extends EventEmitter {
                 element.className = config.class;
             };
         };
-    
+
         if (typeof content === 'object') {
             if (Array.isArray(content)) {
                 element.append(
@@ -69,7 +69,7 @@ class App extends EventEmitter {
         } else {
             element.innerHTML = content;
         };
-    
+
         if ('decorate' in config) {
             config.decorate(element);
         };

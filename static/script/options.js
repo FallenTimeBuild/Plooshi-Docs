@@ -42,12 +42,12 @@ async function options(app) {
             content: 'Fancy'
         }
     ]
-          
-          
+
+
     const selection = new Selection(app);
 
     const backgroundSelection = new Selection(app);
-    
+
 
     themes.forEach(entry => {
         selection.createSelector(entry.id, app.createElement('li', entry.content, {
@@ -82,14 +82,14 @@ async function options(app) {
         if (id === 'none') {
             app.destroyParticles();
         } else if (localStorage.getItem('incog||background') !== id) {
-            switch(id) {
+            switch (id) {
                 case 'stars':
-                app.destroyParticles();
-                particlesJS.load('.particles', './json/stars.json');
-                break;
-            case 'particles':
-                app.destroyParticles();
-                particlesJS.load('.particles', './json/particles.json'); 
+                    app.destroyParticles();
+                    particlesJS.load('.particles', './json/stars.json');
+                    break;
+                case 'particles':
+                    app.destroyParticles();
+                    particlesJS.load('.particles', './json/particles.json');
             };
         };
 
@@ -261,12 +261,12 @@ async function options(app) {
     ));
 
     tabs.createTab('about', app.createElement(
-        'div', 
-        
+        'div',
+
         await createAbout(app)
-        )
     )
-    
+    )
+
     app.nav.about = app.createElement('a', 'About', {
         events: {
             click() {
@@ -296,7 +296,7 @@ async function options(app) {
         id: 'appearance',
     });
 
-    
+
 
     tabs.switchTab('appearance');
 
@@ -304,7 +304,7 @@ async function options(app) {
     app.search.back.style.display = 'inline';
     app.search.back.setAttribute(
         'onclick',
-        '(' + (function(){
+        '(' + (function () {
             window.location.hash = '';
         }).toString() + ')();'
     )
@@ -314,7 +314,7 @@ async function options(app) {
 async function createAbout(app) {
     const res = await fetch('./about.json');
     const json = await res.json();
-    
+
     const authors = [];
     const socials = [];
     const contacts = [];

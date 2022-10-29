@@ -20,7 +20,7 @@ function access(app) {
     document.querySelector('#open-nav').setAttribute('data-open', '');
     app.search.input.focus();
 
- 
+
     app.nav.community = app.createLink('#discord', 'Discord');
     app.nav.support = app.createLink('#support', 'Support');
     app.nav.apps = app.createLink('#apps', 'Apps');
@@ -29,7 +29,7 @@ function access(app) {
         id: 'apps'
     })
 
-	app.main.tip = app.createElement('div', tips[Math.floor(Math.random()*tips.length)], {
+    app.main.tip = app.createElement('div', tips[Math.floor(Math.random() * tips.length)], {
         class: 'tip'
     });
 
@@ -38,21 +38,21 @@ function access(app) {
         class: 'suggestions',
         style: {
             display: 'block'
-        } 
+        }
     });
 
     app.search.input.setAttribute(
         'oninput',
-        '(' + (async function() {
+        '(' + (async function () {
             app.main.suggestions.innerHTML = '';
             if (!event.target.value) {
                 app.nav.target.style.removeProperty('display');
                 app.header.target.setAttribute('data-page', '');
-		app.main.tip.style.removeProperty('display');
+                app.main.tip.style.removeProperty('display');
                 app.search.logo.style.display = 'inline';
                 return;
             }
-	    app.main.tip.style.display = 'none';
+            app.main.tip.style.display = 'none';
             app.header.target.removeAttribute('data-page');
             app.nav.target.style.display = 'none';
             app.search.logo.style.display = 'none';
@@ -101,7 +101,7 @@ function access(app) {
     if (params.has('link')) {
         app.main.target.style.display = 'none';
         app.header.target.style.display = 'none';
-        
+
         const frame = document.querySelector('.access-frame');
 
         frame.src = '/load.html#' + encodeURIComponent(params.get('link'));

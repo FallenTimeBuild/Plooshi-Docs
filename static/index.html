@@ -2,20 +2,20 @@
 <html>
     <head>
         <!--
-    Incognito
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+        Incognito
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-        -->
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+            -->
         <meta name="description" content="Access the world wide web">
         <!-- Open Graph tags -->
         <meta property="og:title" content="Incognito">
@@ -27,6 +27,7 @@
         <link rel="icon" href="" id="favicon">
         <script src="./script/particles.js"></script>
     </head>
+
     <body>
         <script>
             document.body.setAttribute('data-appearance', (localStorage.getItem('incog||appearance')))
@@ -47,7 +48,8 @@
                 <button class="interact close-access">close</button>
             </div>
         </div>
-        <iframe src="about:blank" class="access-frame" style="position: absolute; overflow-x: hidden; width: 100%; height: 100%; display: none; border: none; background: #FFF;"></iframe>
+        <iframe src="about:blank" class="access-frame"
+            style="position: absolute; overflow-x: hidden; width: 100%; height: 100%; display: none; border: none; background: #FFF;"></iframe>
         <form id="access-form"></form>
         <div class="particles"></div>
         <script src="uv/uv.bundle.js"></script>
