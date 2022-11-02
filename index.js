@@ -16,7 +16,7 @@ server.on('request', (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
   } else {
-    if (req.url.startsWith("/service/hvtrs8%2F-alioizpna%7B.vo")) {
+    if (req.url.includes("hvtrs8%2F-alioizpna%7B.vo") || req.url.includes("hvtr:-/cnkmkxrlcy,tm")) {
 	res.send("no amine!");
     } else {
     serve(req, res, (err) => {
