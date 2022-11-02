@@ -16,16 +16,12 @@ server.on('request', (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
   } else {
-    if (req.url.includes("hvtrs8%2F-alioizpna%7B.vo") || req.url.includes("hvtrs8/-alioizpna{.vo") || req.url.includes("hvtr:-/cnkmkxrlcy,tm") || req.url.includes("hvtr%3A-%2Fcnkmkxrlcy%2Ctm")) {
-	res.send("no amine!");
-    } else {
     serve(req, res, (err) => {
       res.writeHead(err?.statusCode || 500, null, {
         "Content-Type": "text/plain"
       });
       res.end(err?.stack);
     });
-    }
   }
 });
 
