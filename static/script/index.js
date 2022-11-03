@@ -39,7 +39,7 @@ document.querySelector('#close-nav').addEventListener('click', app.closeNav);
 document.title = localStorage.getItem('incog||title') || 'Plooshi Docs';
 window.icon = document.querySelector('#favicon');
 
-icon.href = localStorage.getItem('incog||icon') || 'http://23.159.16.196/ploosh.webp';
+icon.href = localStorage.getItem('incog||icon') || '/ploosh.webp';
 
 app.on('init', () => {
     app.icon = document.querySelector('#favicon');
