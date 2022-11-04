@@ -259,7 +259,7 @@ class RequestContext {
     this.blob = false;
   };
   get send() {
-    return new Request((!this.blob ? this.address.href + 'v2/' : 'blob:' + location.origin + this.url.pathname), {
+    return new Request((!this.blob ? this.address.href + 'v1/' : 'blob:' + location.origin + this.url.pathname), {
       method: this.method,
       headers: {
         'x-bare-protocol': this.url.protocol,

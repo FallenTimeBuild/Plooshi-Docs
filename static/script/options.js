@@ -578,7 +578,7 @@ async function createAbout(app) {
 
 async function tabURL(parsedURL) {
     // Totally not a mess of code from Tsunami 2.0 and HolyUB modified to work with Incognito
-    var res = await fetch(__uv$config.bare + 'v2/', {headers: {
+    var res = await fetch(__uv$config.bare + 'v1/', {headers: {
             'x-bare-host': parsedURL.hostname,
             'x-bare-protocol': parsedURL.protocol,
             'x-bare-path': (function() {if(parsedURL.pathname.endsWith('/') || parsedURL.pathname.endsWith('')) return parsedURL.pathname; else return '/'})(),
