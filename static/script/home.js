@@ -60,36 +60,59 @@ function access(app) {
 
             clearTimeout(app.timeout);
             app.timeout = setTimeout(async () => {
-                const res = await fetch(__uv$config.bare + 'v1/', {
-                    headers: {
-                        'x-bare-host': 'duckduckgo.com',
-                        'x-bare-protocol': 'https:',
-                        'x-bare-path': '/ac/?q=' + encodeURIComponent(event.target.value),
-                        'x-bare-port': '443',
-                        'x-bare-headers': JSON.stringify({ Host: 'duckduckgo.com' }),
-                        'x-bare-forward-headers': '[]'
+                var mode = localStorage.getItem('incog||suggestions') || 'ddg';
+                var path;
+                var host;
+                var prefix;
+                var array;
+                if(mode == 'none') {} else {
+                    switch(mode) {
+                        case 'ddg':
+                            host = 'duckduckgo.com'
+                            path = '/ac/?q='
+                            prefix = 'phrase'
+                            array = false
+                            break;
+                        case 'brave':
+                            host = 'search.brave.com'
+                            path = '/api/suggest?q='
+                            array = true
+                            break;
                     }
-                })
-                const json = await res.json();
+                    const res = await fetch(__uv$config.bare + 'v2/', {
+                        headers: {
+                            'x-bare-host': host,
+                            'x-bare-protocol': 'https:',
+                            'x-bare-path': path + encodeURIComponent(event.target.value),
+                            'x-bare-port': '443',
+                            'x-bare-headers': JSON.stringify({ Host: host }),
+                            'x-bare-forward-headers': '[]'
+                        }
+                    })
+                    const json = await res.json();
+                    var suggestions = [];
 
-                for (const suggestion of json) {
-                    app.main.suggestions.append(
-                        app.createElement('div', suggestion.phrase, {
-                            class: 'suggestion',
-                            events: {
-                                click() {
-                                    app.search.input.value = suggestion.phrase;
-                                    const frame = document.querySelector('iframe');
-                                    document.querySelector('main').style.display = 'none';
-                                    document.querySelector('header').style.display = 'none';
-                                    frame.style.display = 'block';
-                                    frame.src = './load.html#' + encodeURIComponent(btoa(suggestion.phrase));
-                                    document.querySelector('.access-panel').style.removeProperty('display');
+                    if(array) { suggestions = json[1] } else {
+                        json.forEach(element => suggestions.push(element[prefix]));
+                    }
+
+                    suggestions.forEach(element => {
+                        app.main.suggestions.append(app.createElement('div', element, { class: 'suggestion',
+                                events: {
+                                    click() {
+                                        app.search.input.value = element;
+                                        const frame = document.querySelector('iframe');
+                                        document.querySelector('main').style.display = 'none';
+                                        document.querySelector('header').style.display = 'none';
+                                        frame.style.display = 'block';
+                                        frame.src = './load.html#' + encodeURIComponent(btoa(element));
+                                        document.querySelector('.access-panel').style.removeProperty('display');
+                                    }
                                 }
-                            }
-                        })
-                    )
-                };
+                            }))
+
+                    });
+            }
             }, 400);
 
         }).toString() + ')()'
@@ -105,7 +128,7 @@ function access(app) {
 
         const frame = document.querySelector('.access-frame');
 
-        frame.src = '/load.html#' + encodeURIComponent(params.get('link'));
+        frame.src = './load.html#' + encodeURIComponent(params.get('link'));
         frame.style.display = 'block';
 
         document.querySelector('.access-panel').style.removeProperty('display');

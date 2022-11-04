@@ -725,7 +725,7 @@ async function __uvHook(window, config = {}, bare = '/bare/') {
 
         if (protocols.length) headers['Sec-WebSocket-Protocol'] = protocols.join(', ');
 
-        event.data.url = (__uv.bare.protocol === 'https:' ? 'wss://' : 'ws://') + __uv.bare.host + __uv.bare.pathname + 'v1/';
+        event.data.url = (__uv.bare.protocol === 'https:' ? 'wss://' : 'ws://') + __uv.bare.host + __uv.bare.pathname + 'v2/';
         event.data.protocols = [
             'bare',
             __uv.encodeProtocol(JSON.stringify({
