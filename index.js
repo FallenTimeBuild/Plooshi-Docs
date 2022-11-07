@@ -2,9 +2,9 @@ import createServer from '@tomphttp/bare-server-node';
 import { fileURLToPath } from "url";
 import http from 'http';
 import serveStatic from "serve-static";
-
-// The following message MAY NOT be removed
-console.log("Incognito\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n")
+import cluster from 'cluster';
+import os from 'os';
+const cpus = os.cpus().length;
 
 const port = process.env.PORT || 8080;
 var data = { live: 0, peak: 0, visits: 0 }
@@ -34,6 +34,12 @@ server.on('upgrade', (req, socket, head) => {
 });
 
 
-server.listen({ port: port, });
-
-console.log("Server running on port " + port)
+if (cluster.isMaster) {
+	for (let i = 0; i < cpus; i++) {
+		cluster.fork();
+	}
+	console.log("Server running on port " + port);
+}
+else {
+	server.listen({ port: port, });
+}
