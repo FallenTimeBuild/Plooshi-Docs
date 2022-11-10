@@ -1,4 +1,4 @@
-import { PlooshiDocs } from '../script/ploosh.js';
+const { PlooshiDocs } = require('../script/ploosh.js');
 
 self.__uv$config = {
     prefix: '/doc/',
