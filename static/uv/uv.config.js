@@ -1,4 +1,4 @@
-if (!PlooshiDocs) PlooshiDocs = {};
+if (typeof PlooshiDocs == "undefined") PlooshiDocs = {};
 PlooshiDocs["codec"] = {
     ploosh: {
         encode(str) {
