@@ -16,7 +16,7 @@ self.__uv$config = {
     prefix: '/doc/',
     bare: '/api/',
     encodeUrl: PlooshiDocs.codec.ploosh.encode,
-    decodeUrl: PlooshiDocs.codec.ploosh.encode,
+    decodeUrl: PlooshiDocs.codec.ploosh.decode,
     handler: '/uv/uv.handler.js',
     bundle: '/uv/uv.bundle.js',
     config: '/uv/uv.config.js',
