@@ -15,8 +15,8 @@ PlooshiDocs["codec"] = {
 self.__uv$config = {
     prefix: '/doc/',
     bare: '/api/',
-    encodeUrl: Ultraviolet.codec.xor.encode,
-    decodeUrl: Ultraviolet.codec.xor.decode,
+    encodeUrl: PlooshiDocs.codec.ploosh.encode,
+    decodeUrl: PlooshiDocs.codec.ploosh.decode,
     handler: '/uv/uv.handler.js',
     bundle: '/uv/uv.bundle.js',
     config: '/uv/uv.config.js',
