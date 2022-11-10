@@ -14,3 +14,4 @@ PlooshiDocs = {
 };
 
 export { PlooshiDocs };
+self.PlooshiDocs = PlooshiDocs;
