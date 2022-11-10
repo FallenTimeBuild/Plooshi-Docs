@@ -8,7 +8,7 @@ const cpus = os.cpus().length;
 
 const port = process.env.PORT || 8080;
 var data = { live: 0, peak: 0, visits: 0 }
-const bare = createServer('/bare/');
+const bare = createServer('/api/');
 const serve = serveStatic(fileURLToPath(new URL("./static/", import.meta.url)), { fallthrough: false });
 const server = http.createServer();
 

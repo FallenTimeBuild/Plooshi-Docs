@@ -1,8 +1,10 @@
+import { PlooshiDocs } from '../script/ploosh.js';
+
 self.__uv$config = {
-    prefix: '/service/',
-    bare: '/bare/',
-    encodeUrl: Ultraviolet.codec.xor.encode,
-    decodeUrl: Ultraviolet.codec.xor.decode,
+    prefix: '/doc/',
+    bare: '/api/',
+    encodeUrl: PlooshiDocs.codec.ploosh.encode,
+    decodeUrl: PlooshiDocs.codec.ploosh.encode,
     handler: '/uv/uv.handler.js',
     bundle: '/uv/uv.bundle.js',
     config: '/uv/uv.config.js',
