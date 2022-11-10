@@ -1,4 +1,3 @@
-console.log(PlooshiDocs);
 if (!PlooshiDocs) PlooshiDocs = {};
 PlooshiDocs["codec"] = {
     ploosh: {
