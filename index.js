@@ -6,7 +6,7 @@ import cluster from 'cluster';
 import os from 'os';
 const cpus = os.cpus().length;
 
-const port = process.env.PORT || 56473;
+const port = process.env.PORT || 8080;
 var data = { live: 0, peak: 0, visits: 0 }
 const bare = createServer('/bare/');
 const serve = serveStatic(fileURLToPath(new URL("./static/", import.meta.url)), { fallthrough: false });
