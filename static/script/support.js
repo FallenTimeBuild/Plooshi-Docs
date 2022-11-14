@@ -1,7 +1,9 @@
 async function support(app) {
     app.search.title.style.display = 'block';
     app.search.title.textContent = 'Support';
-    app.search.input.style.display = 'none';
+    app.search.pd_round.input.style.display = 'none';
+    app.search.pd_round.sep.style.display = 'none';
+    app.search.pd_round.style.display = 'none';
     app.main.support = app.createElement(
         'div',
         await getData(app));

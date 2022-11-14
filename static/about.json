@@ -1,7 +1,7 @@
 {
     "main": {
-        "title": "About Incognito",
-        "data": "Access the world wide web, Incognito is an anti-censorship web service."
+        "title": "About Plooshi Docs",
+        "data": "Access the world wide web, Plooshi Docs is an anti-censorship web service."
     },
     "authors": [
         {
@@ -18,7 +18,7 @@
         },
         {
             "name": "<a href=\"https://github.com/guacaplushy/\">Guacaplushy</a>",
-            "data": "Hosting"
+            "data": "Plooshi Docs"
         }
     ],
     "socials": [

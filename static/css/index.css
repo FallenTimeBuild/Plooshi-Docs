@@ -240,7 +240,7 @@ header[data-init] {
 }
 
 header[data-page] {
-    padding: 0 20%;
+    padding: 0 5%;
     height: 100vh;
 }
 
@@ -520,4 +520,11 @@ nav *:last-child {
     height: 100%;
     top: 0;
     z-index: -1;
+}
+
+nav.pd_round {
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    padding: 0 10px;
+    flex-grow: 1;
 }

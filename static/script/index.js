@@ -66,18 +66,30 @@ app.on('init', () => {
             display: 'none'
         }
     });
-    app.search.input = app.createElement('input', [], {
+    app.search.pd_round = app.createElement('nav', [], {
+        class: 'pd_round'
+    })
+    app.search.pd_round.input = app.createElement('input', [], {
         attrs: {
             placeholder: ''
         },
         class: 'interactive',
     });
-    app.search.submit = app.createElement('button', '<i class="fas fa-search"></i>', {
+    app.search.pd_round.sep = app.createElement('div', [], {
+        style: {
+            'border-left': '1px solid var(--accent)',
+            height: '50px',
+            margin: '0 10px',
+            display: 'none'
+        }
+    });
+    app.search.pd_round.submit = app.createElement('button', '<i class="fa-solid fa-rocket"></i>', {
         class: 'submit',
         style: {
             display: 'none'
         }
     });
+    app.search.pd_round.append(app.search.pd_round.input, app.search.pd_round.sep, app.search.pd_round.submit);
 });
 
 app.on('exit', async () => {
@@ -95,9 +107,9 @@ app.on('exit', async () => {
     };
 
     app.search.logo.style.display = 'none';
-    app.search.submit.style.display = 'none';
+    app.search.pd_round.submit.style.display = 'none';
 
-    app.search.input.removeAttribute('oninput');
+    app.search.pd_round.input.removeAttribute('oninput');
     app.search.title.textContent = '';
     app.search.title.style.display = 'none';
 
@@ -163,7 +175,7 @@ document.querySelector('.access-link').addEventListener('click', () => {
 });
 
 document.querySelector('.access-panel .controls .icon').addEventListener('error', event => {
-    event.target.src = 'img/globe.svg';
+    event.target.src = 'index.svg';
 });
 
 

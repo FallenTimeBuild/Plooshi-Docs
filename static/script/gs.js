@@ -1,6 +1,7 @@
 async function gs(app) {
-    app.search.input.placeholder = 'Search library'
+    app.search.pd_round.input.placeholder = 'Search library'
     app.search.back.style.display = 'inline';
+    app.search.pd_round.sep.style.display = 'none';
     app.search.back.href = '#';
 
     app.main.library = app.createElement('div', await compileGs(app), {
@@ -42,13 +43,13 @@ async function gs(app) {
         }
     });
 
-    app.search.input.setAttribute(
+    app.search.pd_round.input.setAttribute(
         'oninput',
         '(' + (function () {
             let count = 0;
 
             app.main.library.querySelectorAll('.gs-entry').forEach(node => {
-                if (node.getAttribute('data-title').toLowerCase().includes(app.search.input.value.toLowerCase())) {
+                if (node.getAttribute('data-title').toLowerCase().includes(app.search.pd_round.input.value.toLowerCase())) {
                     node.setAttribute('data-active', '1');
                     count++;
                 } else {
@@ -114,7 +115,8 @@ async function compileGs(app) {
                     };
                     app.main.library.style.display = 'none';
                     app.main.player.style.display = 'block';
-                    app.search.input.style.display = 'none';
+                    app.search.pd_round.input.style.display = 'none';
+                    app.search.pd_round.style.display = 'none';
                     app.search.title.style.display = 'block';
                     app.search.title.textContent = entry.title;
 
@@ -153,7 +155,7 @@ async function compileGs(app) {
                             event.preventDefault();
 
                             app.main.library.style.removeProperty('display');
-                            app.search.input.style.removeProperty('display');
+                            app.search.pd_round.input.style.removeProperty('display');
                             app.search.title.style.display = 'none';
                             app.search.title.textContent = '';
                             app.main.player.style.display = 'none';

@@ -1,6 +1,7 @@
 async function apps(app) {
-    app.search.input.placeholder = 'Search apps'
+    app.search.pd_round.input.placeholder = 'Search apps'
     app.search.back.style.display = 'inline';
+    app.search.pd_round.sep.style.display = 'none';
     app.search.back.href = '#';
 
     app.main.library = app.createElement('div', await compileGs(app), {
@@ -16,13 +17,13 @@ async function apps(app) {
         }
     });
 
-    app.search.input.setAttribute(
+    app.search.pd_round.input.setAttribute(
         'oninput',
         '(' + (function () {
             let count = 0;
 
             app.main.library.querySelectorAll('.gs-entry').forEach(node => {
-                if (node.getAttribute('data-title').toLowerCase().includes(app.search.input.value.toLowerCase())) {
+                if (node.getAttribute('data-title').toLowerCase().includes(app.search.pd_round.input.value.toLowerCase())) {
                     node.setAttribute('data-active', '1');
                     count++;
                 } else {

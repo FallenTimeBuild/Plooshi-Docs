@@ -1,3 +1,0 @@
-PlooshiDocs = {};
-
-export { PlooshiDocs };

@@ -5,7 +5,8 @@ async function options(app) {
     document.querySelector('#open-nav').setAttribute('data-open', '');
     app.search.title.style.display = 'block';
     app.search.title.textContent = 'Options';
-    app.search.input.style.display = 'none';
+    app.search.pd_round.input.style.display = 'none';
+    app.search.pd_round.style.display = 'none';
 
     const tabs = new Tabs(app);
     const themes = [
@@ -235,7 +236,7 @@ async function options(app) {
                         }
                     }
                 }),
-                app.createElement('p', 'Change the title of Incognito\'s browser tab title.', {
+                app.createElement('p', 'Change the title of Plooshi Docs\'s browser tab title.', {
                     style: {
                         'margin-bottom': '0'
                     }
@@ -266,7 +267,7 @@ async function options(app) {
                         }
                     }
                 }),
-                app.createElement('p', 'Change the icon of Incognito\'s browser tab. To change it into something like Google, type in "https://www.google.com/favicon.ico"', {
+                app.createElement('p', 'Change the icon of Plooshi Docs\'s browser tab. To change it into something like Google, type in "https://www.google.com/favicon.ico"', {
                     style: {
                         'margin-bottom': '0'
                     }
@@ -337,7 +338,7 @@ async function options(app) {
                             }
                         }
                     }),
-                    app.createElement('p', 'The URL that Incognito redirects to when using about:blank.', {
+                    app.createElement('p', 'The URL that Plooshi Docs redirects to when using about:blank.', {
                         style: {
                             'margin-bottom': '0'
                         }
@@ -435,7 +436,8 @@ async function options(app) {
     tabs.createTab('about', app.createElement('div', await createAbout(app)))
                      
 
-    app.nav.about = app.createElement('a', 'About', {
+    //app.nav.about = app.createElement('a', 'About', {
+    app.nav.about = app.createElement('a', '<i class="fa-solid fa-info secondary"></i>', {
         events: {
             click() {
                 tabs.switchTab('about');
@@ -444,7 +446,8 @@ async function options(app) {
         id: 'about'
     });
 
-    app.nav.search = app.createElement('a', 'Search Engine', {
+    //app.nav.search = app.createElement('a', 'Search Engine', {
+    app.nav.search = app.createElement('a', '<i class="fa-solid fa-search secondary"></i>', {
         events: {
             click() {
                 tabs.switchTab('search');
@@ -455,7 +458,8 @@ async function options(app) {
         id: 'search'
     });
 
-    app.nav.tabs = app.createElement('a', 'Browser Tab', {
+    //app.nav.tabs = app.createElement('a', 'Browser Tab', {
+    app.nav.tabs = app.createElement('a', '<i class="fa-solid fa-window-maximize secondary"></i>', {
         events: {
             click() {
                 tabs.switchTab('tabs');
@@ -464,7 +468,8 @@ async function options(app) {
         id: 'tabs'
     });
 
-    app.nav.appearance = app.createElement('a', 'Appearance', {
+    //app.nav.appearance = app.createElement('a', 'Appearance', {
+    app.nav.appearance = app.createElement('a', '<i class="fa-solid fa-palette secondary"></i>', {
         events: {
             click() {
                 tabs.switchTab('appearance');
