@@ -101,7 +101,7 @@ function filter_bypass(app) {
                                     }
                                 }),
                                 app.createElement('br'),
-                                app.createElement('p', 'Scroll down to where it says network, and click custom nameservers.', {
+                                app.createElement('p', 'Scroll down to where it says network, and click custom nameservers. (you might have to use a different WiFi!)', {
                                     style: {
                                         'margin-bottom': '0',
                                         'text-align': 'center'
