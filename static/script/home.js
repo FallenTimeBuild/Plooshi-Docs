@@ -28,10 +28,10 @@ function access(app) {
     app.nav.support = app.createLink('#support', '<i class="fa-solid fa-question secondary"></i>');
     app.nav.apps = app.createLink('#apps', '<i class="fa-brands fa-app-store-ios secondary"></i>');
     app.nav.games = app.createLink('#gs', '<i class="fa-solid fa-gamepad secondary"></i>');
+    app.nav.filter_bypass = app.createLink('#fb', '<i class="fa-solid fa-unlock secondary"></i>');
     app.nav.settings = app.createLink('#settings', '<i class="fa-solid fa-cog secondary"></i>', {
         id: 'apps'
     })
-    app.nav.filter_bypass = app.createLink('#fb', '<i class="fa-solid fa-unlock secondary"></i>');
 
     app.main.tip = app.createElement('div', tips[Math.floor(Math.random() * tips.length)], {
         class: 'tip'
