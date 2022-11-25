@@ -1,11 +1,11 @@
 {
-  "name": "incognito",
+  "name": "plooshidocs",
   "version": "1.0.0",
-  "description": "Unofficial Incognito easy deployment version with TompHTTP bare server included.",
+  "description": "Plooshi docs",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "install-webretro-linux": "chmod u+x ./src/webretro.sh && ./src/webretro.sh",
+    "start": "node index.js",
+    "install-webretro-linux": "chmod u+x ./webretro.sh && ./webretro.sh",
     "install-webretro-win": "echo \"Error: not finshed\" && exit 1"
   },
   "files": [
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plooshi/Incognito"
+    "url": "git+https://github.com/plooshi/Docs"
   },
   "keywords": [
     "unoffical",
@@ -29,7 +29,7 @@
     "bypass-filter",
     "amethystnetwork-dev"
   ],
-  "author": "",
+  "author": "guacaplushy",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@tomphttp/bare-server-node": "1.0.4-deps1",
