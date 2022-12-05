@@ -18,6 +18,14 @@
     <a href="https://app.koyeb.com/deploy?type=git&repository=github.com/plooshi/Docs&branch=main&name=plooshidocs"><img height="30px" src="https://img.shields.io/badge/koyeb-121212.svg?style=for-the-badge&logo=koyeb&logoColor=87fcc4"><img></a>
 </div>
 
+## Docker
+
+```
+docker pull ghcr.io/plooshi/docs:main
+docker run -p 8080:8080 docs
+```
+setting up as a systemd service is recommended
+
 ## Discord Server
 
 Press the join button to join the server:
