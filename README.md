@@ -20,10 +20,7 @@
 
 ## Docker
 
-Download: `docker pull ghcr.io/plooshi/docs:main`
-<br>
-Run: `docker run -p 8080:8080 docs`
-<br>
+Run: `docker run -p 8080:8080 ghcr.io/plooshi/docs:main`
 setting up as a systemd service is recommended
 
 ## Discord Server
