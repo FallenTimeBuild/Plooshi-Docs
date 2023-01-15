@@ -49,7 +49,7 @@ Press the join button to join the server:
 
 **Can i host this myself**
 
-Yes, it is recommended that you Host this on a machine with atleast 2 cores, 4 gb of ram, fast network and large ammounts of bandwith for the optimal experience.
+Yes, it is recommended that you host this on a machine with atleast 2 cores, 4 gb of ram, fast network and large ammounts of bandwith for the optimal experience.
 
 **How can I get official Plooshi Docs domains?**
 
