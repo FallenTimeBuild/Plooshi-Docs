@@ -84,7 +84,7 @@ function access(app) {
                             array = true
                             break;
                     }
-                    const res = await fetch(__uv$config.bare + 'v1/', {
+                    const res = await fetch(__uv$config.bare + 'v2/', {
                         headers: {
                             'x-bare-host': host,
                             'x-bare-protocol': 'https:',
